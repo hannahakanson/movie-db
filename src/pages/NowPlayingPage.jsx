@@ -11,11 +11,16 @@ const NowPlayingPage = () => {
         return <h2>Loading..</h2>
     }
 
+    const movie = data.data.results
+
 	return (
 		<Container className="py-3">
-			<h1>Welcome to Now Playing</h1>
             {data && console.log(data.data.results)}
-            {data && <MovieList data={data} />}
+            <div className="movielist">
+            {data && data.data.results.map((movie) => {
+                return <MovieList key={movie.id} data={movie} />
+            })}
+            </div>
 		</Container>
 	)
 }

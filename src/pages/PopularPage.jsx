@@ -11,16 +11,18 @@ const PopularPage = () => {
         return <h2>Loading..</h2>
     }
 
+    const movie = data.data.results
+
     console.log("This is data: ", data)
 
 	return (
 		<Container className="py-3">
-			<h1>Welcome to Popular Page</h1>
             {data && console.log(data.data.results)}
-            {/* {data && data.data.results.map(movie => {
-                return <div key={movie.title}><Link to={`/movie/${movie.id}`}>{movie.title}</Link></div>
-            })} */}
-            {data && <MovieList data={data} />}
+            <div className="movielist">
+            {data && data.data.results.map((movie) => {
+                return <MovieList key={movie.id} data={movie} />
+            })}
+            </div>
 		</Container>
 	)
 }

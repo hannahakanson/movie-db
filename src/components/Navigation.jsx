@@ -23,6 +23,9 @@ const Navigation = () => {
 					<Nav className="ms-auto">
 						<Nav.Link as={NavLink} end to="/popular">Popular</Nav.Link>
 					</Nav>
+					<Nav className="ms-auto">
+						<Nav.Link as={NavLink} end to="/filter">Filter</Nav.Link>
+					</Nav>
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>

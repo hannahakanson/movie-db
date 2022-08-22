@@ -1,32 +1,26 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { useState, setUseState } from 'react'
+import { Link } from 'react-router-dom'
   
-  function MovieList({ data }) {
+  function MovieList({ data, key }) {
+
+    //Testing
+    const handleClick = (e) => {
+      console.log("This was clicked: ", e.target)
+    }
+
     return (
-      <>
-        {data && (
-          <Row>
-            {data.data.results.map((movie) => (
-              <Col className='d-flex'>
-                <Card
-                  border='dark'
-                  style={{ width: '18rem' }}
-                  key={movie.id}
-                  className='bg-dark text-white overlay overlay-hover m-2'
-                >
-                  <Card.Img
-                    variant="top"
-                    src={'https://image.tmdb.org/t/p/w500' + movie.poster_path}
-                  />
-                  <Card.ImgOverlay className='overlay'>
-                    <Card.Title>{movie.title}</Card.Title>
-                    <div className='card-subtitle mb-2 text-muted'>{movie.release_date}</div>
-                  </Card.ImgOverlay>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        )}
-      </>
+        <div 
+          onClick={handleClick}
+          key={key}
+          className="moviecard">
+          
+          <h2 className="movie-title">{data.title}</h2>
+          <div className="img-wrapper">
+            <img  
+              src={"https://image.tmdb.org/t/p/w500" + data.poster_path}
+            />
+          </div>
+        </div>
     );
   }
   
