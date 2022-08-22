@@ -1,14 +1,12 @@
 import Container from 'react-bootstrap/Container'
 import { useQuery } from 'react-query'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
+import API_services from '../services/API'
+import MovieList from '../components/MovieList'
 
-const API_KEY = '?api_key=c3727d320066b67db1ac6c816b95ec36&language=en-US&page=1';
-const BASE_URL = 'https://api.themoviedb.org/3/movie';
 
 const TopRatedPage = () => {
-    const { isLoading, data } = useQuery('top-rated', () => {
-        return axios.get(`${BASE_URL}/top_rated${API_KEY}`)
-    })
+    const { isLoading, data } = useQuery('top-rated', API_services.getTopRated)
 
     if(isLoading) {
         return <h2>Loading..</h2>
@@ -18,9 +16,10 @@ const TopRatedPage = () => {
 		<Container className="py-3">
 			<h1>Welcome to Top Rated</h1>
             {data && console.log(data.data.results)}
-            {data && data.data.results.map(movie => {
-                return <div key={movie.title}>{movie.title}</div>
-            })}
+            {/* {data && data.data.results.map(movie => {
+                return <div key={movie.title}><Link to={`/movie/${movie.id}`}>{movie.title}</Link></div>
+            })} */}
+            {data && <MovieList data={data} />}
 		</Container>
 	)
 }

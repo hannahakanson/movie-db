@@ -6,6 +6,7 @@ import NowPlayingPage from './pages/NowPlayingPage'
 import './assets/scss/App.scss'
 import TopRatedPage from './pages/TopRatedPage'
 import PopularPage from './pages/PopularPage'
+import SingleMoviePage from './pages/SingleMoviePage'
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route path="/nowplaying" element={<NowPlayingPage />} />
 				<Route path="/toprated" element={<TopRatedPage />} />
 				<Route path="/popular" element={<PopularPage />} />
+				<Route path="/movie/:id" element={<SingleMoviePage movieId />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

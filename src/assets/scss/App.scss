@@ -1,1 +1,9 @@
 @import 'bootstrap/scss/bootstrap';
+
+body {
+    background-color: rgb(24, 22, 22);
+}
+
+.overlay {
+    background-image: linear-gradient(rgba(21, 21, 21, 0.906), rgba(255, 255, 255, 0));
+}
