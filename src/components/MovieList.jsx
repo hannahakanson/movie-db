@@ -1,7 +1,7 @@
 import { useState, setUseState } from 'react'
 import { Link } from 'react-router-dom'
   
-  function MovieList({ data, key }) {
+  function MovieList({ movie, id }) {
 
     //Testing
     const handleClick = (e) => {
@@ -9,18 +9,17 @@ import { Link } from 'react-router-dom'
     }
 
     return (
-        <div 
-          onClick={handleClick}
-          key={key}
-          className="moviecard">
-          
-          <h2 className="movie-title">{data.title}</h2>
+      <Link to={`/movie/${id}`}
+            key={id}>
+        <div className="moviecard">
+          <h2 className="movie-title">{movie.title}</h2>
           <div className="img-wrapper">
             <img  
-              src={"https://image.tmdb.org/t/p/w500" + data.poster_path}
+              src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
             />
           </div>
         </div>
+        </Link>
     );
   }
   

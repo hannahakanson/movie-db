@@ -1,26 +1,22 @@
 import Container from 'react-bootstrap/Container'
 import { useQuery } from 'react-query'
-import axios from 'axios'
+import { useParams } from 'react-router-dom'
+import API_services from '../services/API'
 
-const API_KEY = '?api_key=c3727d320066b67db1ac6c816b95ec36&language=en-US&page=1';
-const BASE_URL = 'https://api.themoviedb.org/3/movie';
-
-const SingleMoviePage = ( { movieId }) => {
-    const { isLoading, data } = useQuery('single-movie', () => {
-        return axios.get(`${BASE_URL}/${movieId}${API_KEY}`)
-    })
+const SingleMoviePage = () => {
+    const { id } = useParams()
+    
+    const { isLoading, data } = useQuery(['movie', id], API_services.getMovie)
 
     if(isLoading) {
         return <h2>Loading..</h2>
     }
 
+    const movie = data.data
+
 	return (
 		<Container className="py-3">
-            <h1>Single movie page</h1>
-            {data && console.log("Testing:", data.data.results)}
-            {data && data.data.results.map(movie => {
-                return <div key={movie.title}>{movie.title}</div>
-            })}
+            <h1 className="text-white">{movie.original_title}</h1>
 		</Container>
 	)
 }

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useParams } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
@@ -20,7 +20,7 @@ function App() {
 				<Route path="/toprated" element={<TopRatedPage />} />
 				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/filter" element={<FilterPage />} />
-				<Route path="/movie/:id" element={<SingleMoviePage movieId />} />
+				<Route path="/movie/:id" element={<SingleMoviePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

@@ -1,29 +1,20 @@
 import { Card, Col, Row } from "react-bootstrap";
 import { useState, setUseState } from 'react'
   
-  function MovieList({ data }) {
+  function SingleMovie({ data }) {
 
-    //Testing
-    const handleClick = (e) => {
-      e.preventDefault();
-      console.log('The link was clicked.');
-    }
-
-    //Testing
-    const [isShown, setIsShown] = useState(false);
 
     return (
       <>
         {data && (
           <Row>
             {data.data.results.map((movie) => (
-              <Col className='d-flex'>
+              <Col className='d-flex'
+                    key={movie.id}>
                 <Card
                   border='dark'
                   style={{ width: '18rem' }}
-                  key={movie.id}
                   className='moviecard bg-dark text-white overlay overlay-hover m-2'
-                  onClick={handleClick}
                   
                 >
                   <Card.Img
@@ -47,4 +38,4 @@ import { useState, setUseState } from 'react'
     );
   }
   
-  export default MovieList;
+  export default SingleMovie;

@@ -1,6 +1,5 @@
 import Container from 'react-bootstrap/Container'
 import { useQuery } from 'react-query'
-import { Link } from 'react-router-dom'
 import API_services from '../services/API'
 import MovieList from '../components/MovieList'
 
@@ -18,7 +17,7 @@ const NowPlayingPage = () => {
             {data && console.log(data.data.results)}
             <div className="movielist">
             {data && data.data.results.map((movie) => {
-                return <MovieList key={movie.id} data={movie} />
+                return <MovieList key={movie.id} id={movie.id} movie={movie} />
             })}
             </div>
 		</Container>

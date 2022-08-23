@@ -1,6 +1,5 @@
 import Container from 'react-bootstrap/Container'
 import { useQuery } from 'react-query'
-import { Link } from 'react-router-dom'
 import API_services from '../services/API'
 import MovieList from '../components/MovieList'
 import Filter from '../components/Filter'
