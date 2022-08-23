@@ -12,9 +12,6 @@ const Navigation = () => {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="ms-auto">
-						<Nav.Link as={NavLink} end to="/">Home</Nav.Link>
-					</Nav>
-					<Nav className="ms-auto">
 						<Nav.Link as={NavLink} end to="/nowplaying">Now playing</Nav.Link>
 					</Nav>
 					<Nav className="ms-auto">
@@ -24,7 +21,7 @@ const Navigation = () => {
 						<Nav.Link as={NavLink} end to="/popular">Popular</Nav.Link>
 					</Nav>
 					<Nav className="ms-auto">
-						<Nav.Link as={NavLink} end to="/filter">Filter</Nav.Link>
+						<Nav.Link as={NavLink} end to="/genres">Filter</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

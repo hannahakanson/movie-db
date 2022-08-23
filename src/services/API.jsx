@@ -31,12 +31,20 @@ const getActor = ({queryKey}) => {
     return axios.get(`${BASE_URL}/person/${id}${API_KEY}&append_to_response=movie_credits`)
 }
 
+
+const getFilteredMovies = ({queryKey}) => {
+    const [_key, id] = queryKey
+
+    return axios.get(`${BASE_URL}/discover/movie/${API_KEY}&with_genres=${id}`)
+}
+
 const API_services = {
     getPopular, 
     getNowPlaying, 
     getTopRated, 
     getGenres, 
     getMovie, 
-    getActor}
+    getActor,
+    getFilteredMovies}
 
 export default API_services

@@ -19,7 +19,6 @@ const ActorPage = () => {
 
 	return (
 		<Container className="py-3 text-white">
-            <h1>Actor page</h1>
             <h1>{data.data.name}</h1>
             <img src={"https://image.tmdb.org/t/p/w500" + data.data.profile_path} alt=""/>
             <div className="list-container">

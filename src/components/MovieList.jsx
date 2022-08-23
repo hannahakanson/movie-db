@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom'
             key={id}>
         <div className="moviecard">
           <h2 className="movie-title">{movie.title}</h2>
+          <h6>{movie.vote_average}</h6>
           <div className="img-wrapper">
             <img className="movielist-img"  
               src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}

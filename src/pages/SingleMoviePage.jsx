@@ -24,13 +24,16 @@ const SingleMoviePage = () => {
                 <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}/>
                 <h2>Actors</h2>
                 <div className="list-container">
-                    {data && data.data.credits.cast.map((actor) => {
+                    {data && data.data.credits.cast.slice(0,10).map((actor) => {
                         const id = actor.id
-                        return <Col>
+                        return <Col 
+                                    key={id}>
                                     <Link 
-                                        to={`/actor/${id}`}
-                                        key={id}>
-                                        <p>{actor.name}</p>
+                                        to={`/actor/${id}`}>
+                                        <div className="actor-list">
+                                            <p><strong>{actor.name}</strong></p>
+                                            <p className="text-muted">{actor.character}</p>
+                                        </div>
                                     </Link>
                             </Col>
                     })}
