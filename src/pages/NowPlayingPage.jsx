@@ -13,7 +13,7 @@ const NowPlayingPage = () => {
     const movie = data.data.results
 
 	return (
-		<Container className="py-3">
+		<Container className="py-5">
             <div className="movielist">
             {data && data.data.results.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />

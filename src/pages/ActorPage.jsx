@@ -16,11 +16,31 @@ const ActorPage = () => {
     console.log("This is actors movies: ", data.data.movie_credits.cast)
 
     const actorsMovies = data.data.movie_credits.cast
+    const actor = data.data
 
 	return (
-		<Container className="py-3 text-white">
-            <h1>{data.data.name}</h1>
-            <img src={"https://image.tmdb.org/t/p/w500" + data.data.profile_path} alt=""/>
+		<Container className="py-5 text-white">
+            <div className="container d-lg-flex">
+                <img className="single-img" src={"https://image.tmdb.org/t/p/w500" + data.data.profile_path} alt=""/>
+                <div className="mx-4">
+                    <h1>{actor.name}</h1>
+                    <p className="text-secondary fw-light">{actor.birthday}</p>
+
+                    <ul class="list-group list-group-flush bg-transparent text-white">
+                            <li class="list-group-item">
+                                <strong>Place of birth: </strong>
+                                <span className="fw-light">{actor.place_of_birth}</span>
+                                </li>
+                            <li class="list-group-item">
+                                 <strong>Biography: </strong>
+                                 <span className="fw-light">{actor.biography}</span>
+                                </li>
+                        </ul>
+
+                </div>
+            </div>
+            
+            <h2>Appears in</h2>
             <div className="list-container">
                 {actorsMovies && actorsMovies.map((movie)=> {
                     return <Link 

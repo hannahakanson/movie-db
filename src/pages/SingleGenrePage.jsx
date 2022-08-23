@@ -21,7 +21,7 @@ const SingleGenrePage = () => {
     console.log("This is data: ", data)
 
 	return (
-		<Container className="py-3">
+		<Container className="py-5">
             <Filter genres={data.data.genres} />
             <div className="movielist">
             {data && data.data.results.map((movie) => {

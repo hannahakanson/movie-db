@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 const GenrePage = () => {
 
 	return (
-		<Container className="py-3">
+		<Container className="py-5">
             <Filter />
 		</Container>
 	)

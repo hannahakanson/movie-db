@@ -10,18 +10,18 @@ const Navigation = () => {
 				<Navbar.Brand as={Link} to="/">Movie DB</Navbar.Brand>
 
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="ms-auto">
+				<Navbar.Collapse className="ms-auto d-sm-flex justify-content-end">
+					<Nav className="mx-2">
 						<Nav.Link as={NavLink} end to="/nowplaying">Now playing</Nav.Link>
 					</Nav>
-					<Nav className="ms-auto">
+					<Nav className="mx-2">
 						<Nav.Link as={NavLink} end to="/toprated">Top rated</Nav.Link>
 					</Nav>
-					<Nav className="ms-auto">
+					<Nav className="mx-2">
 						<Nav.Link as={NavLink} end to="/popular">Popular</Nav.Link>
 					</Nav>
-					<Nav className="ms-auto">
-						<Nav.Link as={NavLink} end to="/genres">Filter</Nav.Link>
+					<Nav className="mx-2">
+						<Nav.Link as={NavLink} end to="/genres">Genres</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

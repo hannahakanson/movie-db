@@ -3,7 +3,6 @@ import { useQuery } from 'react-query'
 import API_services from '../services/API'
 import MovieList from '../components/MovieList'
 
-
 const TopRatedPage = () => {
     const { isLoading, data } = useQuery('top-rated', API_services.getTopRated)
 
@@ -14,7 +13,7 @@ const TopRatedPage = () => {
     const movie = data.data.results
 
 	return (
-		<Container className="py-3">
+		<Container className="py-5">
             <div className="movielist">
             {data && data.data.results.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />
