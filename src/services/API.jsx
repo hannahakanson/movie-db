@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_KEY = '?api_key=c3727d320066b67db1ac6c816b95ec36&language=en-US';
+const API_KEY = '?api_key=c3727d320066b67db1ac6c816b95ec36&language=en-US&include_adult=false';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 const getPopular = () => {
@@ -22,13 +22,13 @@ const getGenres = () => {
 const getMovie = ({queryKey}) => {
     const [_key, id] = queryKey
 
-    return axios.get(`${BASE_URL}/movie/${id}${API_KEY}`)
+    return axios.get(`${BASE_URL}/movie/${id}${API_KEY}&append_to_response=credits`)
 }
 
-const getActors = ({queryKey}) => {
+const getActor = ({queryKey}) => {
     const [_key, id] = queryKey
 
-    return axios.get(`${BASE_URL}/movie/${id}/credits${API_KEY}`)
+    return axios.get(`${BASE_URL}/person/${id}${API_KEY}&append_to_response=movie_credits`)
 }
 
 const API_services = {
@@ -37,6 +37,6 @@ const API_services = {
     getTopRated, 
     getGenres, 
     getMovie, 
-    getActors}
+    getActor}
 
 export default API_services

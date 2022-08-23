@@ -8,6 +8,7 @@ import TopRatedPage from './pages/TopRatedPage'
 import PopularPage from './pages/PopularPage'
 import SingleMoviePage from './pages/SingleMoviePage'
 import FilterPage from './pages/FilterPage'
+import ActorPage from './pages/ActorPage'
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/filter" element={<FilterPage />} />
 				<Route path="/movie/:id" element={<SingleMoviePage />} />
+				<Route path="/actor/:id" element={<ActorPage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

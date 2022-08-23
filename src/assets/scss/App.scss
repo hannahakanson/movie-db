@@ -5,6 +5,19 @@ body {
     background-color: rgb(24, 22, 22);
 }
 
+img {
+    border-radius: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.749)
+}
+
+.list-container {
+    columns: 6 auto;
+}
+
 .overlay {
     background-image: linear-gradient(rgba(21, 21, 21, 0.906), rgba(255, 255, 255, 0));
 }
@@ -21,11 +34,17 @@ body {
     grid-row-gap: 2rem;
 }
 
-img {
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 2rem;
+}
+
+.movielist-img {
     width: 100%;
     height: 50vh;
     object-fit: cover;
-    border-radius: 1rem;
     margin-bottom: 1rem;
     transition: transform .4s;
 }
@@ -35,6 +54,6 @@ img {
     border-radius: 1rem;
 }
 
-img:hover {
+.movielist-img:hover {
     transform: scale(1.1)
 }

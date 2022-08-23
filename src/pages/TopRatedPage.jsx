@@ -15,7 +15,6 @@ const TopRatedPage = () => {
 
 	return (
 		<Container className="py-3">
-            {data && console.log(data.data.results)}
             <div className="movielist">
             {data && data.data.results.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />

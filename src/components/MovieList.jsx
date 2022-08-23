@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
         <div className="moviecard">
           <h2 className="movie-title">{movie.title}</h2>
           <div className="img-wrapper">
-            <img  
+            <img className="movielist-img"  
               src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
             />
           </div>
