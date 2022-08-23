@@ -33,9 +33,9 @@ const getActor = ({queryKey}) => {
 
 
 const getFilteredMovies = ({queryKey}) => {
-    const [_key, id] = queryKey
+    const [_key, id, page] = queryKey
 
-    return axios.get(`${BASE_URL}/discover/movie/${API_KEY}&with_genres=${id}`)
+    return axios.get(`${BASE_URL}/discover/movie/${API_KEY}&page=${page}&with_genres=${id}`)
 }
 
 const API_services = {

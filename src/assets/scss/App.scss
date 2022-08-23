@@ -14,9 +14,6 @@ a {
     color: rgba(255, 255, 255, 0.749)
 }
 
-.list-container {
-    columns: 6 auto;
-}
 
 .overlay {
     background-image: linear-gradient(rgba(21, 21, 21, 0.906), rgba(255, 255, 255, 0));
@@ -36,13 +33,26 @@ a {
 
 .list-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-column-gap: 0.5rem;
     grid-row-gap: 2rem;
 }
 
 .actor-list p {
     margin-bottom: 0.3rem;
+}
+
+// .actor-thumbnail {
+//     width: 100px;
+//     height: 100px;
+//     border-radius: 100%;
+// }
+
+.actor-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    object-fit: cover;
 }
 
 .movielist-img {
