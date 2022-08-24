@@ -2,24 +2,13 @@ import Container from 'react-bootstrap/Container'
 import HomePageMovieList from '../components/HomePageMovieList'
 import { useQuery } from 'react-query'
 import API_services from '../services/API'
-import { Audio } from  'react-loader-spinner'
 
 const HomePage = () => {
 
 	const { isLoading, data } = useQuery('popular', API_services.getPopular)
 
     if(isLoading) {
-        return <div className="container-fluid d-flex align-items-center justify-content-center">
-			<Audio
-				height = "500"
-				width = "500"
-				radius = "9"
-				color = '#5a5a5a'
-				ariaLabel = 'three-dots-loading'     
-				wrapperStyle
-				wrapperClass
-			/>
-      </div>
+        return <h2>Loading...</h2>
     }
 
 	const movie = data.data.results

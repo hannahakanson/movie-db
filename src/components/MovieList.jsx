@@ -23,9 +23,10 @@ import { FaImdb } from 'react-icons/fa';
               </motion.div>
             </>
           )}
+            
             <motion.img className="moviecard-img"  
-              src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
-            />
+              src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} />
+            
 
         </motion.div>
         </Link>

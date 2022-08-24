@@ -56,13 +56,15 @@
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,rgb(0, 0, 0) 100%); /* W3C */
       }
 
-.img-wrapper img {
-    display:block;
-}
 
 
 .moviecard {
     position: relative;
+    transition: transform .5s ease-in-out;
+}
+
+.moviecard:hover img {
+    transform: scale(1.2);
 }
 
 .moviecard-text {
