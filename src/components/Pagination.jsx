@@ -1,13 +1,22 @@
 import Pagination from 'react-bootstrap/Pagination'
 
-const PaginationComponent = ( {page, nextPage, prevPage} ) => {
+const PaginationComponent = ( { page, totalPages, turnPage }) => {
+
     return (
-        <Pagination>
-                <Pagination.Prev onClick={prevPage}/>
+        <Pagination className="m-4">
+                <Pagination.Prev onClick={() => {
+                    turnPage({
+                        page: Number(page) - 1,
+                    })
+                }}/>
                 {page!=1 && <Pagination.Item>{page-1}</Pagination.Item>}
                 <Pagination.Item active>{page}</Pagination.Item>
-                <Pagination.Item>{page+1}</Pagination.Item>
-                <Pagination.Next onClick={nextPage} />
+                <Pagination.Item>{Number(page)+1}</Pagination.Item>
+                <Pagination.Next onClick={() => {
+                    turnPage({
+                        page: Number(page) + 1,
+                    })
+                }} />
         </Pagination>
     )
 }

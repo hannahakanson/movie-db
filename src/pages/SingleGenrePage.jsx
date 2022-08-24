@@ -3,22 +3,26 @@ import { useQuery } from 'react-query'
 import API_services from '../services/API'
 import MovieList from '../components/MovieList'
 import { useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Filter from '../components/Filter'
 import PaginationComponent from '../components/Pagination'
+import { useSearchParams } from 'react-router-dom'
 
 const SingleGenrePage = () => {
-    const { id } = useParams()
 
-    const [page, setPage] = useState(1)
+    const [searchParams, setSearchParams] = useSearchParams({
+		page: 1,
+	})
+
+	const page = searchParams.get('page')
+
+    const { id } = useParams()
 
     const { isLoading, data } = useQuery(['filtered-movies', id, page], API_services.getFilteredMovies)
 
     if(isLoading) {
         return <h2>Loading..</h2>
     }
-
-    console.log("This is data: ", data)
 
 	return (
 		<Container className="py-5">
@@ -31,9 +35,9 @@ const SingleGenrePage = () => {
 
             <div className="d-flex justify-content-center">
             <PaginationComponent
-                page={page}
-                nextPage={() => setPage((current) => current + 1)}
-                prevPage={() => setPage((current) => current - 1)}
+               page={page}
+               totalPages={data.total_pages}
+               turnPage={setSearchParams}
             />
             </div>
 

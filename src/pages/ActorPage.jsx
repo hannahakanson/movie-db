@@ -26,12 +26,12 @@ const ActorPage = () => {
                     <h1>{actor.name}</h1>
                     <p className="text-secondary fw-light">{actor.birthday}</p>
 
-                    <ul class="list-group list-group-flush bg-transparent text-white">
-                            <li class="list-group-item">
+                    <ul className="list-group list-group-flush bg-transparent text-white">
+                            <li className="list-group-item">
                                 <strong>Place of birth: </strong>
                                 <span className="fw-light">{actor.place_of_birth}</span>
                                 </li>
-                            <li class="list-group-item">
+                            <li className="list-group-item">
                                  <strong>Biography: </strong>
                                  <span className="fw-light">{actor.biography}</span>
                                 </li>

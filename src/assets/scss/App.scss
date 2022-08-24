@@ -6,10 +6,35 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 
-$list-group-bg: $gray-900;
+#App {
+    min-height: 100vh;
+}
+
+.homepage-heading {
+    font-size: 4rem;
+    font-family: 'Manrope', sans-serif;
+    color:rgba(255, 255, 255, 0.872)
+}
+
+.rating {
+    color:rgba(255, 255, 255, 0.749)
+}
+
+.rating-number {
+    font-size: 0.9rem;
+}
+
+
+.flexcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 body {
     background-color: rgb(24, 22, 22);
+    min-height: 100vh;
 }
 
 h2 {
@@ -17,6 +42,7 @@ h2 {
     margin-top: 5%;
     text-transform: uppercase;
     font-family: 'Manrope', sans-serif;
+    color:rgba(255, 255, 255, 0.749)
 }
 
 img {
@@ -27,7 +53,6 @@ a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.749)
 }
-
 
 .list-container {
     display: grid;

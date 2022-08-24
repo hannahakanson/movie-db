@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import API_services from '../services/API'
 import { Link } from 'react-router-dom'
-//import * as Icon from 'react-bootstrap-icons';
+import { FaImdb } from 'react-icons/fa';
 
 const SingleMoviePage = () => {
     const { id } = useParams()
@@ -28,16 +28,20 @@ const SingleMoviePage = () => {
                         <h1>{movie.original_title}</h1>
                         <p className="text-secondary fw-light">{movie.tagline}</p>
 
-                        <ul class="list-group list-group-flush bg-transparent text-white">
-                            <li class="list-group-item">
+                        <ul className="list-group list-group-flush bg-transparent text-white">
+                        <li className="list-group-item">
+                                <strong>Rating: </strong>
+                                <span className="fw-light">{movie.vote_average}</span>
+                                </li>
+                            <li className="list-group-item">
                                 <strong>Release date: </strong>
                                 <span className="fw-light">{movie.release_date}</span>
                                 </li>
-                            <li class="list-group-item">
+                            <li className="list-group-item">
                                  <strong>Budget: </strong>
                                  <span className="fw-light">{movie.budget}</span>
                                 </li>
-                            <li class="list-group-item fw-light">
+                            <li className="list-group-item fw-light">
                                 {movie.overview}
                                 </li>
                         </ul>
