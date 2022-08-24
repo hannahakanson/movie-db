@@ -21,7 +21,7 @@ function App() {
 				<Route path="/nowplaying" element={<NowPlayingPage />} />
 				<Route path="/toprated" element={<TopRatedPage />} />
 				<Route path="/popular" element={<PopularPage />} />
-				<Route path="/genres" element={<GenrePage />} />
+				<Route path="/genres" element={<SingleGenrePage />} />
 				<Route path="/movie/:id" element={<SingleMoviePage />} />
 				<Route path="/actor/:id" element={<ActorPage />} />
 				<Route path="/genres/:id" element={<SingleGenrePage />} />

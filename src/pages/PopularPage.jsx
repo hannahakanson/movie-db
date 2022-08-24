@@ -12,8 +12,6 @@ const PopularPage = () => {
 
     const movie = data.data.results
 
-    console.log("This is data: ", data)
-
 	return (
 		<Container className="py-5">
             <div className="movielist">

@@ -23,7 +23,7 @@ const SingleMoviePage = () => {
 		<Container className="py-5 text-white">
 
                 <div className="container d-lg-flex">
-                    <img className="single-img" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}/>
+                    <img className="img-fluid mb-2" src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}/>
                     <div className="mx-4">
                         <h1>{movie.original_title}</h1>
                         <p className="text-secondary fw-light">{movie.tagline}</p>

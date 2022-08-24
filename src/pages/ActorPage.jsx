@@ -12,8 +12,6 @@ const ActorPage = () => {
     if(isLoading) {
         return <h2>Loading..</h2>
     }
-    console.log("This is actor: ", data.data)
-    console.log("This is actors movies: ", data.data.movie_credits.cast)
 
     const actorsMovies = data.data.movie_credits.cast
     const actor = data.data
@@ -21,7 +19,7 @@ const ActorPage = () => {
 	return (
 		<Container className="py-5 text-white">
             <div className="container d-lg-flex">
-                <img className="single-img" src={"https://image.tmdb.org/t/p/w500" + data.data.profile_path} alt=""/>
+                <img className="img-fluid mb-2" src={"https://image.tmdb.org/t/p/w500" + data.data.profile_path} alt=""/>
                 <div className="mx-4">
                     <h1>{actor.name}</h1>
                     <p className="text-secondary fw-light">{actor.birthday}</p>

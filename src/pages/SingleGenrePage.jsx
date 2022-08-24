@@ -1,9 +1,9 @@
 import Container from 'react-bootstrap/Container'
+import Dropdown from 'react-bootstrap/Dropdown'
 import { useQuery } from 'react-query'
 import API_services from '../services/API'
 import MovieList from '../components/MovieList'
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
 import Filter from '../components/Filter'
 import PaginationComponent from '../components/Pagination'
 import { useSearchParams } from 'react-router-dom'
@@ -26,7 +26,8 @@ const SingleGenrePage = () => {
 
 	return (
 		<Container className="py-5">
-            <Filter genres={data.data.genres} />
+            <Filter id={id} />
+
             <div className="movielist">
             {data && data.data.results.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />

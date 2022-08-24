@@ -10,7 +10,7 @@ const Navigation = () => {
 				<Navbar.Brand as={Link} to="/">Movie DB</Navbar.Brand>
 
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse className="ms-auto d-sm-flex justify-content-end">
+				<Navbar.Collapse className="ms-auto d-md-flex justify-content-end">
 					<Nav className="mx-2">
 						<Nav.Link as={NavLink} end to="/nowplaying">Now playing</Nav.Link>
 					</Nav>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import API_services from '../services/API'
 
-function Filter( { onSetSearchParams }) {
+function Filter( { onSetSearchParams, id }) {
 
     const { isLoading, data } = useQuery('genres', API_services.getGenres)
 
@@ -19,7 +19,7 @@ function Filter( { onSetSearchParams }) {
                 return <Button 
                 key={genre.id} 
                 className="m-2" 
-                variant="outline-light"
+                variant={id==genre.id ? "light" : "outline-light"}
                 onClick={() => { onSetSearchParams({ page: 1 }) }}
                 as={Link}
                 to={`/genres/${genre.id}`}
