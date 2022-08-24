@@ -4,21 +4,18 @@
 @import 'Loading';
 @import 'SingleMovie';
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;600;800&display=swap');
 
 #App {
     min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    color:rgba(255, 255, 255, 0.762)
 }
 
 .homepage-heading {
     font-size: 4rem;
-    font-family: 'Manrope', sans-serif;
-    color:rgba(255, 255, 255, 0.872)
 }
 
-.rating {
-    color:rgba(255, 255, 255, 0.749)
-}
 
 .rating-number {
     font-size: 0.9rem;
@@ -37,13 +34,15 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    font-weight: 800; 
+}
+
 h2 {
-    margin-bottom: 5%;
     margin-top: 5%;
     text-transform: uppercase;
-    font-family: 'Manrope', sans-serif;
     color:rgba(255, 255, 255, 0.749);
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 img {
@@ -60,6 +59,10 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-column-gap: 0.5rem;
     grid-row-gap: 2rem;
+}
+
+.list-group {
+    padding-top: 5%;
 }
 
 .actor-list p {

@@ -28,6 +28,8 @@ const SingleGenrePage = () => {
 		<Container className="py-5">
             <Filter id={id} />
 
+            <hr/>
+
             <div className="movielist">
             {data && data.data.results.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />

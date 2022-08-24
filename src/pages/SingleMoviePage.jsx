@@ -50,6 +50,7 @@ const SingleMoviePage = () => {
                 </div>
 
                 <h2>Actors</h2>
+                <hr/>
                 <div className="list-container">
                     {data && data.data.credits.cast.slice(0,12).map((actor) => {
                         const id = actor.id
