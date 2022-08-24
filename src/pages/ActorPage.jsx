@@ -43,7 +43,7 @@ const ActorPage = () => {
                 {actorsMovies && actorsMovies.map((movie)=> {
                     return <Link 
                             to={`/movie/${movie.id}`}
-                            key={id}>
+                            key={movie.id}>
                                 <p>{movie.original_title}</p>
                             </Link>
                 })}
