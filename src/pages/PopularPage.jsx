@@ -13,7 +13,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 import PageHeading from '../components/PageHeading'
 
 const PopularPage = () => {
-    const { isLoading, data } = useQuery('popular', API_services.getPopular)
+    const { isLoading, data, error, isError } = useQuery('popular', API_services.getPopular)
 
     if(isLoading) {
         return <LoadingSpinner />

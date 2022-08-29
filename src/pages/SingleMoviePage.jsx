@@ -16,7 +16,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 const SingleMoviePage = () => {
     const { id } = useParams()
     
-    const { isLoading, data } = useQuery(['movie', id], API_services.getMovie)
+    const { isLoading, data, error, isError } = useQuery(['movie', id], API_services.getMovie)
 
     if(isLoading) {
         return <LoadingSpinner />

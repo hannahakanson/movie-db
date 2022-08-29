@@ -15,7 +15,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 
 const HomePage = () => {
 
-	const { isLoading, data } = useQuery('popular', API_services.getPopular)
+	const { isLoading, data, error, isError } = useQuery('popular', API_services.getPopular)
 
     if(isLoading) {
         return <LoadingSpinner />

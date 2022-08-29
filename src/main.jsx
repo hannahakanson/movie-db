@@ -1,20 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import axios from 'axios'
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 
-// const defaultQueryFn = async ({ queryKey }) => {
-// 	const { data } = await axios.get(`https://jsonplaceholder.typicode.com${queryKey[0]}`);
-// 	return data;
-//   };
 
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
-			// queryFn: defaultQueryFn,
 			refetchOnWindowFocus: false,
+			staleTime: 1000 * 60 * 60, //1 hour
+			cacheTime: 1000 * 60 * 60 * 3, //3 hours
 		}
 	}
 })

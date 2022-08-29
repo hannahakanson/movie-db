@@ -19,7 +19,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 const ActorPage = () => {
     const { id } = useParams()
     
-    const { isLoading, data } = useQuery(['actor', id], API_services.getActor)
+    const { isLoading, data, error, isError } = useQuery(['actor', id], API_services.getActor)
 
     if(isLoading) {
         return <LoadingSpinner />

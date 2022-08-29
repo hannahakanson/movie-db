@@ -26,7 +26,7 @@ const SingleGenrePage = () => {
 
     const { id } = useParams()
 
-    const { isLoading, data } = useQuery(['filtered-movies', id, page], API_services.getFilteredMovies)
+    const { isLoading, data, error, isError } = useQuery(['filtered-movies', id, page], API_services.getFilteredMovies)
 
     if(isLoading) {
         return <LoadingSpinner />

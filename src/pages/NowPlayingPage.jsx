@@ -14,7 +14,7 @@ import PageHeading from '../components/PageHeading'
 
 
 const NowPlayingPage = () => {
-    const { isLoading, data } = useQuery('now-playing', API_services.getNowPlaying)
+    const { isLoading, data, error, isError } = useQuery('now-playing', API_services.getNowPlaying)
 
     if(isLoading) {
         return <LoadingSpinner />

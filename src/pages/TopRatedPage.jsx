@@ -13,7 +13,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
 import PageHeading from '../components/PageHeading'
 
 const TopRatedPage = () => {
-    const { isLoading, data } = useQuery('top-rated', API_services.getTopRated)
+    const { isLoading, data, error, isError } = useQuery('top-rated', API_services.getTopRated)
 
     if(isLoading) {
         return <LoadingSpinner />
