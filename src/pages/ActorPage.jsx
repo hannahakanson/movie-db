@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom'
 //API services
 import API_services from '../services/API'
 
-
 //Bootstrap components
 import Container from 'react-bootstrap/Container'
 

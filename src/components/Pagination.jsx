@@ -1,3 +1,4 @@
+//Bootstrap components
 import Pagination from 'react-bootstrap/Pagination'
 
 const PaginationComponent = ( { page, turnPage }) => {

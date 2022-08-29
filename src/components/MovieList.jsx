@@ -1,13 +1,17 @@
+//React hooks / components
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+//Animation library
 import { motion } from 'framer-motion'
+
+//Icons
 import { FaImdb } from 'react-icons/fa';
 
   
   function MovieList({ movie, id }) {
 
     const [isOpen, setIsOpen] = useState(false)
-
     
     return (
       <Link to={`/movie/${id}`}

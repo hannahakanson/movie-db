@@ -1,6 +1,9 @@
+//Bootstrap components
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+
+//React components
 import { Link, NavLink } from 'react-router-dom'
 
 const Navigation = () => {

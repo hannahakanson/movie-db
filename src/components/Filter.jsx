@@ -1,17 +1,28 @@
+//Bootstrap components
 import { Button } from 'react-bootstrap'
+
+//React hooks / components
 import { Link } from 'react-router-dom'
 import { useQuery } from 'react-query'
+
+//API service
 import API_services from '../services/API'
+
+//Components
+import LoadingSpinner from '../components/LoadingSpinner'
 
 function Filter( { onSetSearchParams, id }) {
 
-    const { isLoading, data } = useQuery('genres', API_services.getGenres)
+    const { isLoading, data , error, isError} = useQuery('genres', API_services.getGenres)
 
     if(isLoading) {
-        return <h2>Loading..</h2>
+        return <LoadingSpinner />
     }
 
-    console.log("This is data:", data)
+    if(isError) {
+        return <><h1>Something went wrong.</h1></>
+    }
+
 
     return (
         <div className='pb-4'>

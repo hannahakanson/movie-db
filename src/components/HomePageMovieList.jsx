@@ -1,9 +1,15 @@
+//React components
 import { Link } from 'react-router-dom'
+
+//Icons
 import { FaImdb } from 'react-icons/fa';
   
   function HomePageMovieList({ movie, id }) {
 
     return (
+    <div>
+    <hr/>
+    <h2>Featured movie</h2>
       <Link to={`/movie/${id}`}
             key={id}>
         <div className="moviecard">
@@ -21,6 +27,7 @@ import { FaImdb } from 'react-icons/fa';
 
         </div>
         </Link>
+        </div>
     );
   }
   

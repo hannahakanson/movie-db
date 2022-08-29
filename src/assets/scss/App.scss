@@ -18,10 +18,8 @@
 }
 
 
-.flexcontainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.homepagecontainer {
+    flex-direction: column;
 }
 
 

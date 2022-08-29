@@ -28,8 +28,8 @@ const HomePage = () => {
 	const movie = data.data.results
 
 	return (
-		<Container className="py-5 flexcontainer">
-			<div>
+		<Container className="py-5">
+			<div className="container d-lg-flex homepagecontainer">
 				<h1 className="homepage-heading">Explore the latest greatest movies</h1>
 				<div>
 					<Button 
@@ -58,7 +58,7 @@ const HomePage = () => {
 							movie={movie} />
             })}
             </div>
-		</Container>
+			</Container>
 		</Container>
 	)
 }
