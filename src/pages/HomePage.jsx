@@ -22,7 +22,7 @@ const HomePage = () => {
     }
 
 	if(isError) {
-		console.log(data.error)
+		console.log(error)
         return <><h1>Something went wrong.</h1></>
     }
 
