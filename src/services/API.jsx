@@ -2,7 +2,7 @@ import axios from 'axios'
 
 //Key and base url
 const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = 'https://api.themoviedb.org/3';
+const BASE_URL = '//api.themoviedb.org/3';
 
 //Get popular movies
 const getPopular = () => {
