@@ -15,6 +15,7 @@ import TopRatedPage from './pages/TopRatedPage'
 import PopularPage from './pages/PopularPage'
 import SingleMoviePage from './pages/SingleMoviePage'
 import GenrePage from './pages/GenrePage'
+import SingleGenrePage from './pages/SingleGenrePage'
 import ActorPage from './pages/ActorPage'
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
 				<Route path="/genres" element={<GenrePage />} />
 				<Route path="/movie/:id" element={<SingleMoviePage />} />
 				<Route path="/actor/:id" element={<ActorPage />} />
-				<Route path="/genres/:id" element={<GenrePage />} />
+				<Route path="/genres/:id" element={<SingleGenrePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
