@@ -18,7 +18,8 @@ import { FaImdb } from 'react-icons/fa';
           {isOpen && (
             <>
               <motion.div className="moviecard-text">
-              <motion.h5 className="fw-light rating"><FaImdb /> <span className="rating-number">{movie.vote_average}</span></motion.h5>
+              <motion.h5 className="fw-light rating">
+                <FaImdb /> <span className="rating-number">{movie.vote_average}</span></motion.h5>
               <motion.h5 className="movie-title">{movie.title}</motion.h5>
               </motion.div>
             </>

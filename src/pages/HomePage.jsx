@@ -1,16 +1,24 @@
-import Container from 'react-bootstrap/Container'
-import HomePageMovieList from '../components/HomePageMovieList'
+// React hooks / components
 import { useQuery } from 'react-query'
-import API_services from '../services/API'
-import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+
+//API services
+import API_services from '../services/API'
+
+//Bootstrap components
+import Container from 'react-bootstrap/Container'
+import { Button } from 'react-bootstrap'
+
+//Components
+import HomePageMovieList from '../components/HomePageMovieList'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const HomePage = () => {
 
 	const { isLoading, data } = useQuery('popular', API_services.getPopular)
 
     if(isLoading) {
-        return <h2>Loading...</h2>
+        return <LoadingSpinner />
     }
 
 	const movie = data.data.results

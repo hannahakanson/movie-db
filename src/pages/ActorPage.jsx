@@ -1,10 +1,20 @@
-import Container from 'react-bootstrap/Container'
+//React hooks
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
+
+//API services
 import API_services from '../services/API'
-import { Link } from 'react-router-dom'
+
+//Icons
 import { FaBirthdayCake } from 'react-icons/fa';
 import { MdPlace } from 'react-icons/md';
+
+//Bootstrap components
+import Container from 'react-bootstrap/Container'
+
+//Components
+import MovieList from '../components/MovieList'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const ActorPage = () => {
     const { id } = useParams()
@@ -12,7 +22,7 @@ const ActorPage = () => {
     const { isLoading, data } = useQuery(['actor', id], API_services.getActor)
 
     if(isLoading) {
-        return <h2>Loading..</h2>
+        return <LoadingSpinner />
     }
 
     const actorsMovies = data.data.movie_credits.cast
@@ -44,15 +54,12 @@ const ActorPage = () => {
             
             <h2>Appears in</h2>
             <hr/>
-            <div className="list-container">
-                {actorsMovies && actorsMovies.map((movie)=> {
-                    return <Link 
-                            to={`/movie/${movie.id}`}
-                            key={movie.id}>
-                                <p>{movie.original_title}</p>
-                            </Link>
+                <div className="movielist">
+                    {data && actorsMovies.slice(0,12).map((movie) => {
+                        return <MovieList key={movie.id} id={movie.id} movie={movie} />
                 })}
             </div>
+           
 		</Container>
 	)
 }

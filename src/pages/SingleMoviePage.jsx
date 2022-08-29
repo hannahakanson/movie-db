@@ -1,10 +1,17 @@
-import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col';
+//React hooks / components
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
-import API_services from '../services/API'
 import { Link } from 'react-router-dom'
-import { FaImdb } from 'react-icons/fa';
+
+//API services
+import API_services from '../services/API'
+
+//Bootstrap components
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col';
+
+//Components
+import LoadingSpinner from '../components/LoadingSpinner'
 
 const SingleMoviePage = () => {
     const { id } = useParams()
@@ -12,7 +19,7 @@ const SingleMoviePage = () => {
     const { isLoading, data } = useQuery(['movie', id], API_services.getMovie)
 
     if(isLoading) {
-        return <h2>Loading..</h2>
+        return <LoadingSpinner />
     }
 
     console.log("This is actors: ", data.data.credits.cast)
@@ -30,7 +37,7 @@ const SingleMoviePage = () => {
 
                         <ul className="list-group list-group-flush bg-transparent text-white">
                         <li className="list-group-item">
-                                <strong>Rating: </strong>
+                                <strong>Average rating: </strong>
                                 <span className="fw-light">{movie.vote_average}</span>
                                 </li>
                             <li className="list-group-item">

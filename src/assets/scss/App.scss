@@ -1,9 +1,10 @@
+//css imports
 @import 'bootstrap/scss/bootstrap';
-@import 'Filter';
 @import 'MovieList';
 @import 'Loading';
 @import 'SingleMovie';
 
+//Font
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;600;800&display=swap');
 
 #App {
@@ -14,11 +15,6 @@
 
 .homepage-heading {
     font-size: 4rem;
-}
-
-
-.rating-number {
-    font-size: 0.9rem;
 }
 
 
