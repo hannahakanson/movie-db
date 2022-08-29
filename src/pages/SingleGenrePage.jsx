@@ -15,8 +15,6 @@ import PaginationComponent from '../components/Pagination'
 import LoadingSpinner from '../components/LoadingSpinner'
 import PageHeading from '../components/PageHeading'
 
-
-
 const SingleGenrePage = () => {
 
     const [searchParams, setSearchParams] = useSearchParams({
