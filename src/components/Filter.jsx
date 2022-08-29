@@ -11,7 +11,7 @@ import API_services from '../services/API'
 //Components
 import LoadingSpinner from '../components/LoadingSpinner'
 
-function Filter( { onSetSearchParams, id }) {
+function Filter( { id }) {
 
     const { isLoading, data , error, isError} = useQuery('genres', API_services.getGenres)
 
@@ -31,7 +31,6 @@ function Filter( { onSetSearchParams, id }) {
                 key={genre.id} 
                 className="m-2" 
                 variant={id==genre.id ? "light" : "outline-light"}
-                onClick={() => { onSetSearchParams({ page: 1 }) }}
                 as={Link}
                 to={`/genres/${genre.id}`}
                 >
