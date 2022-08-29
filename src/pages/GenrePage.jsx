@@ -8,8 +8,6 @@ import PageHeading from '../components/PageHeading'
 
 const GenrePage = () => {
 
-    const id = null
-
 	return (
 		<Container className="py-5">
 
@@ -18,7 +16,7 @@ const GenrePage = () => {
                 subheading="Browse movies by genre"
                 />
             
-            <Filter id={id} />
+            <Filter />
 
 		</Container>
 	)
