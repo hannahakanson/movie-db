@@ -26,7 +26,7 @@ const HomePage = () => {
         return <><h1>Something went wrong.</h1></>
     }
 
-	const movie = data.data.results
+	const movie = data
 
 	return (
 		<Container className="py-5">

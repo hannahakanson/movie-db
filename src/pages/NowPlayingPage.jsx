@@ -24,7 +24,7 @@ const NowPlayingPage = () => {
         return <><h1>Something went wrong.</h1></>
     }
 
-    const movies = data.data.results
+    const movies = data
 
 	return (
 		<Container className="py-5">

@@ -5,44 +5,65 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 //Get popular movies
-const getPopular = () => {
-    return axios.get(`${BASE_URL}/movie/popular${API_KEY}&page=1`)
+const getPopular = async () => {
+    const res = await axios.get(
+        `${BASE_URL}/movie/popular${API_KEY}&page=1`)
+    
+        return res.data.results
 }
 
 //Get movies in cinemas
-const getNowPlaying = () => {
-    return axios.get(`${BASE_URL}/movie/now_playing${API_KEY}&page=1`)
+const getNowPlaying = async () => {
+    const res = await axios.get(
+        `${BASE_URL}/movie/now_playing${API_KEY}&page=1`)
+
+    return res.data.results
 }
 
 //Get top rated movies
-const getTopRated = () => {
-    return axios.get(`${BASE_URL}/movie/top_rated${API_KEY}&page=1`)
+const getTopRated = async () => {
+    const res = await axios.get(
+        `${BASE_URL}/movie/top_rated${API_KEY}&page=1`)
+
+    return res.data.results
 }
 
 //Get all genres
-const getGenres = () => {
-    return axios.get(`${BASE_URL}/genre/movie/list${API_KEY}`)
+const getGenres = async () => {
+    const res = await axios.get(
+        `${BASE_URL}/genre/movie/list${API_KEY}`)
+
+    return res.data.genres
 }
 
 //Get single movie
-const getMovie = ({queryKey}) => {
+const getMovie = async ({queryKey}) => {
     const [_key, id] = queryKey
 
-    return axios.get(`${BASE_URL}/movie/${id}${API_KEY}&append_to_response=credits`)
+    const res = await axios.get(
+        `${BASE_URL}/movie/${id}${API_KEY}&append_to_response=credits`)
+
+    return res.data
 }
 
 //Get single actor
-const getActor = ({queryKey}) => {
+const getActor = async ({queryKey}) => {
     const [_key, id] = queryKey
 
-    return axios.get(`${BASE_URL}/person/${id}${API_KEY}&append_to_response=movie_credits`)
+    const res = await axios.get(
+        `${BASE_URL}/person/${id}${API_KEY}&append_to_response=movie_credits`)
+
+    return res.data
 }
 
 //Get filtered movies
-const getFilteredMovies = ({queryKey}) => {
+const getFilteredMovies = async ({queryKey}) => {
     const [_key, id, page] = queryKey
 
-    return axios.get(`${BASE_URL}/discover/movie${API_KEY}&page=${page}&with_genres=${id}`)
+    const res = await axios.get(
+        `${BASE_URL}/discover/movie${API_KEY}&page=${page}&with_genres=${id}`)
+
+    return res.data
 }
 
 const API_services = {

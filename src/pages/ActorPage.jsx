@@ -25,8 +25,9 @@ const ActorPage = () => {
         return <><h1>Something went wrong.</h1></>
     }
 
-    const actorsMovies = data.data.movie_credits.cast
-    const actor = data.data
+    const actor = data
+    const actorsMovies = actor.movie_credits.cast
+
 
 	return (
 		<Container className="py-5">

@@ -46,7 +46,7 @@ const SingleGenrePage = () => {
             <Filter id={id} />
 
             <div className="movielist">
-            {data && data.data.results.map((movie) => {
+            {data && data.results.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />
             })}
             </div>
