@@ -21,6 +21,7 @@ import { FaImdb } from 'react-icons/fa';
                     className="moviecard">
           {isOpen && (
             <>
+            {/* Only show the card-text on hover */}
               <motion.div className="moviecard-text">
               <motion.h5 className="fw-light rating">
                 <FaImdb /> <span className="rating-number">{movie.vote_average}</span></motion.h5>
@@ -28,7 +29,7 @@ import { FaImdb } from 'react-icons/fa';
               </motion.div>
             </>
           )}
-            
+            {/* Card image */}
             <motion.img className="moviecard-img"  
               src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} />
             

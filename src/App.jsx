@@ -21,6 +21,7 @@ import ActorPage from './pages/ActorPage'
 function App() {
 	return (
 		<div id="App">
+
 			<Navigation />
 
 			<Routes>
@@ -34,6 +35,7 @@ function App() {
 				<Route path="/genres/:id" element={<SingleGenrePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
+			
 		</div>
 	)
 }

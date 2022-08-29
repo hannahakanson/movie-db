@@ -22,16 +22,20 @@ const HomePage = () => {
     }
 
 	if(isError) {
-		console.log(error)
-        return <><h1>Something went wrong.</h1></>
+        return <h1>Something went wrong.</h1>
     }
 
-	const movie = data
+	//Save data in variable
+	const movies = data
 
 	return (
 		<Container className="py-5">
 			<div className="container d-lg-flex homepagecontainer">
+
+				{/* Home page heading */}
 				<h1 className="homepage-heading">Explore the latest greatest movies</h1>
+
+				{/* Home page buttons */}
 				<div>
 					<Button 
 						className="mt-3" 
@@ -49,9 +53,11 @@ const HomePage = () => {
 						Top rated</Button>
 				</div>
 			</div>
+
+			{/* Featured Movie */}
 			<Container className="py-5">
             <div className="movielist">
-            {data && movie.slice(0,1).map((movie) => {
+            {data && movies.slice(0,1).map((movie) => {
                 return <HomePageMovieList 
 							style={{zIndex: '-1'}}
 							key={movie.id} 

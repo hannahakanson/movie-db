@@ -9,6 +9,7 @@ import { FaImdb } from 'react-icons/fa';
     return (
     <div>
     <hr/>
+    {/* Featured movie for the home page */}
     <h2>Featured movie</h2>
       <Link to={`/movie/${id}`}
             key={id}>

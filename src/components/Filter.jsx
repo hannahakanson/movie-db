@@ -26,6 +26,7 @@ function Filter( { id }) {
 
     return (
         <div className='pb-4'>
+            {/* Genre buttons */}
             {data && data.map(genre => {
                 return <Button 
                 key={genre.id} 

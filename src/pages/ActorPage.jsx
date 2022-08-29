@@ -22,9 +22,10 @@ const ActorPage = () => {
     }
 
     if(isError) {
-        return <><h1>Something went wrong.</h1></>
+        return <h1>Something went wrong.</h1>
     }
 
+    //Save data in variables
     const actor = data
     const actorsMovies = actor.movie_credits.cast
 
@@ -35,7 +36,6 @@ const ActorPage = () => {
                 actor={actor}
                 actorsMovies={actorsMovies}
                 />
-           
 		</Container>
 	)
 }

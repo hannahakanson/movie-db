@@ -20,7 +20,7 @@ const PopularPage = () => {
     }
 
     if(isError) {
-        return <><h1>Something went wrong.</h1></>
+        return <h1>Something went wrong.</h1>
     }
 
     const movie = data
@@ -32,6 +32,7 @@ const PopularPage = () => {
                 subheading="Check out the most trending movies right now" 
                 />
 
+            {/* Popular movies list */}
             <div className="movielist">
             {data && movie.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />

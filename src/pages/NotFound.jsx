@@ -14,6 +14,7 @@ const NotFound = () => {
 				<h4 className="text-muted">Check out some of our other pages.</h4>
 			</div>
 
+			{/* Redirect buttons */}
 			<div>
 					<Button 
 						className="mt-3" 

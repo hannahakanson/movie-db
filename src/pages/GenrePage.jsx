@@ -16,6 +16,7 @@ const GenrePage = () => {
                 subheading="Browse movies by genre"
                 />
             
+            {/* Genre Buttons */}
             <Filter />
 
 		</Container>

@@ -22,9 +22,10 @@ const SingleMoviePage = () => {
     }
 
     if(isError) {
-        return <><h1>Something went wrong.</h1></>
+        return <h1>Something went wrong.</h1>
     }
 
+    //Save data in variables
     const movie = data
     const movieActors = movie.credits.cast
 

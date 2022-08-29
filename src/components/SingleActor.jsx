@@ -9,11 +9,13 @@ const SingleActor = ( { actor, actorsMovies }) => {
     return (
         <div>
             <div className="container d-lg-flex">
+                {/* Actor image */}
                 <img className="img-fluid mb-2" src={"https://image.tmdb.org/t/p/w500" + actor.profile_path} alt=""/>
+
+                {/* Actor information */}
                 <div className="mx-4">
                     <h1>{actor.name}</h1>
-                    
-
+                    {/* Actor info list */}
                     <ul className="list-group list-group-flush bg-transparent">
                             <li className="list-group-item">
                                 <span className="text-secondary fw-light"><MdPlace /> {actor.place_of_birth}</span>
@@ -22,7 +24,7 @@ const SingleActor = ( { actor, actorsMovies }) => {
                             <span className="text-secondary fw-light"><FaBirthdayCake /> {actor.birthday}</span>
                                 </li>
                         </ul>
-
+                        {/* Actor biography */}
                         <span className="mt-3 fw-light">
                                  {actor.biography}
                         </span>
@@ -30,6 +32,7 @@ const SingleActor = ( { actor, actorsMovies }) => {
                 </div>
             </div>
             
+            {/* Actor's movies */}
             <h2>Appears in</h2>
             <hr/>
                 <div className="movielist">

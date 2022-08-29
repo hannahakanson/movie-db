@@ -32,7 +32,7 @@ const SingleGenrePage = () => {
     }
 
     if(isError) {
-        return <><h1>Something went wrong.</h1></>
+        return <h1>Something went wrong.</h1>
     }
 
 	return (
@@ -43,14 +43,17 @@ const SingleGenrePage = () => {
                 subheading="Browse movies by genre"
                 />
             
+            {/* Genre buttons */}
             <Filter id={id} />
 
+            {/* Filtered movies list */}
             <div className="movielist">
             {data && data.results.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />
             })}
             </div>
 
+            {/* Pagination */}
             <div className="d-flex justify-content-center">
             <PaginationComponent
                page={page}

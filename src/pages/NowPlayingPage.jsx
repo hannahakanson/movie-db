@@ -21,7 +21,7 @@ const NowPlayingPage = () => {
     }
 
     if(isError) {
-        return <><h1>Something went wrong.</h1></>
+        return <h1>Something went wrong.</h1>
     }
 
     const movies = data
@@ -33,6 +33,7 @@ const NowPlayingPage = () => {
                 subheading="Latest movies in the cinemas right now"
                 />
 
+            {/* Now playing list */}
             <div className="movielist">
             {data && movies.map((movie) => {
                 return <MovieList key={movie.id} id={movie.id} movie={movie} />
