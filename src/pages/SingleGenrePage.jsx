@@ -17,7 +17,7 @@ import PageHeading from '../components/PageHeading'
 
 
 
-const SingleGenrePage = () => {
+const SingleGenrePage = ( { }) => {
 
     const [searchParams, setSearchParams] = useSearchParams({
 		page: 1,
