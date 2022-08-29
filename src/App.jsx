@@ -1,9 +1,16 @@
+//Styles
+import './assets/scss/App.scss'
+
+//React
 import { Routes, Route } from 'react-router-dom'
+
+//Components
 import Navigation from './components/Navigation'
+
+//Pages
 import HomePage from './pages/HomePage'
 import NotFound from './pages/NotFound'
 import NowPlayingPage from './pages/NowPlayingPage'
-import './assets/scss/App.scss'
 import TopRatedPage from './pages/TopRatedPage'
 import PopularPage from './pages/PopularPage'
 import SingleMoviePage from './pages/SingleMoviePage'

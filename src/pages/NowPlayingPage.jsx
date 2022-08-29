@@ -20,6 +20,10 @@ const NowPlayingPage = () => {
         return <LoadingSpinner />
     }
 
+    if(isError) {
+        return <><h1>Something went wrong.</h1></>
+    }
+
     const movies = data.data.results
 
 	return (

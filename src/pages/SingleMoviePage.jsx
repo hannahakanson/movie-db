@@ -22,6 +22,10 @@ const SingleMoviePage = () => {
         return <LoadingSpinner />
     }
 
+    if(isError) {
+        return <><h1>Something went wrong.</h1></>
+    }
+
     console.log("This is actors: ", data.data.credits.cast)
 
     const movie = data.data

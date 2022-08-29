@@ -32,6 +32,10 @@ const SingleGenrePage = () => {
         return <LoadingSpinner />
     }
 
+    if(isError) {
+        return <><h1>Something went wrong.</h1></>
+    }
+
 	return (
 		<Container className="py-5">
 

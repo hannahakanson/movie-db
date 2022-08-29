@@ -21,6 +21,10 @@ const HomePage = () => {
         return <LoadingSpinner />
     }
 
+	if(isError) {
+        return <><h1>Something went wrong.</h1></>
+    }
+
 	const movie = data.data.results
 
 	return (
@@ -44,7 +48,7 @@ const HomePage = () => {
 						Top rated</Button>
 				</div>
 			</div>
-			<Container className="py-5 flexcontainer-col">
+			<Container className="py-5">
             <div className="movielist">
             {data && movie.slice(0,1).map((movie) => {
                 return <HomePageMovieList 
